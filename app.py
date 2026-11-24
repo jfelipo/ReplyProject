@@ -35,7 +35,11 @@ st.set_page_config(
 )
 
 # Cliente de DeepSeek (usa la misma librería que OpenAI, solo cambia la URL)
-DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
+# En local usa .env, en Streamlit Cloud usa st.secrets
+try:
+    DEEPSEEK_API_KEY = st.secrets["DEEPSEEK_API_KEY"]
+except:
+    DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 cliente = OpenAI(
     api_key=DEEPSEEK_API_KEY,
     base_url="https://api.deepseek.com",
