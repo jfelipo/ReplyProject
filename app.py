@@ -24,7 +24,7 @@ import streamlit.components.v1 as components
 # 1. CONFIGURACIÓN INICIAL
 # ============================================================
 
-# Cargar variables desde el archivo .env (ahí va la API key, nunca en el código)
+# Cargar variables desde .env (local) o desde Secrets (Streamlit Cloud)
 load_dotenv()
 
 # Configurar la pestaña del navegador
